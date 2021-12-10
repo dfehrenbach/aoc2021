@@ -9,7 +9,7 @@
 (def input1
   (->> "src/aoc2021/day8/input1.txt"
        slurp
-       string/split-lines
+       string/split-line
        (map parse-line)))
 
 (def input-test
