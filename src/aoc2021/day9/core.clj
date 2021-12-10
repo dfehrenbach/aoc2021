@@ -60,12 +60,12 @@
   (count (dfs-basin arr point)))
 
 (defn part2 [input]
-  (let [low-points-x-y (for [y (range 0 (count input))
-                             x (range 0 (count (first input)))
-                             :when (low-point? input [x y])
-                             :when (< (-> input (nth y) (nth x)) 9)]
-                         [x y])
-        basin-sizes (map (partial basin-size input) low-points-x-y)]
+  (let [low-points (for [y (range 0 (count input))
+                         x (range 0 (count (first input)))
+                         :when (low-point? input [x y])
+                         :when (< (-> input (nth y) (nth x)) 9)]
+                     [x y])
+        basin-sizes (map (partial basin-size input) low-points)]
     (->> basin-sizes
          sort
          reverse
