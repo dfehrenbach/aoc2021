@@ -14,21 +14,8 @@
 
 (def input-test [16 1 2 0 4 2 7 1 2 14])
 
-#_(defn value-split [crabs x]
-    (let [lesser (count (filter (partial > x) crabs))
-          greater (count (filter (partial < x) crabs))]
-      {:dec-cost (- greater lesser)
-       :inc-cost (- lesser greater)}))
-
 (defn calculate-fuel1 [crabs x]
   (reduce + (map #(math/abs (- % x)) crabs)))
-
-#_(defn r-fuel [crabs starting-x starting-fuel]
-    (let [{lesser :lesser greater :greater} (value-split crabs starting-x)]
-      (cond
-        (< lesser greater) (r-fuel)
-        (< greater lesser) 0
-        :else 0)))
 
 (defn part1 [crabs]
   (apply min (map (partial calculate-fuel1 crabs)
