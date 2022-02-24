@@ -8,5 +8,6 @@
                  [org.clojure/math.combinatorics "0.1.6"]
                  [instaparse/instaparse "1.4.10"]
                  [org.clojure/data.priority-map "1.1.0"]
+                 [net.mikera/core.matrix "0.62.0"]
                  [philoskim/debux "0.8.1"]]
   :repl-options {:init-ns aoc2021.core})
